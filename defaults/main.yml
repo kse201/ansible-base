@@ -1,0 +1,19 @@
+---
+pkgs:
+  - git
+  - screen
+  - zsh
+dotfiles: 
+  repo: http://github.com/kse201/dotfiles.git
+  version: master
+  files:
+    - .gitconfig
+    - .screenrc
+    - .tmux.conf
+    - .vimrc
+    - .vimrc.plugin
+    - .zsh.d
+    - .zshrc
+repo_shougowares:
+  - https://github.com/Shougo/unite.vim
+  - https://github.com/Shougo/neobundle.vim.git

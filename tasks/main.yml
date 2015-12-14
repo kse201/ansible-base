@@ -1,0 +1,32 @@
+---
+- name: Install packages
+  yum:
+    name: "{{ item }}"
+  sudo: yes
+  with_items:
+    - "{{ pkgs }}"
+
+- name: install dotfiles
+  git:
+    repo: "{{ dotfiles.repo }}"
+    dest: "{{ ansible_env.HOME }}/.dotfiles"
+
+- name: link dotfiles
+  file:
+    src: "{{ ansible_env.HOME }}/.dotfiles/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/{{ item }}"
+    state: link
+  with_items:
+    - "{{ dotfiles.files }}"
+
+- name: make vim/bundle dir
+  file: 
+    path: "{{ ansible_env.HOME }}/.vim/bundle"
+    state: directory
+
+- name: install shougoware
+  git:
+    repo: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.vim/bundle"
+  with_items:
+    - "{{ repo_shougowares}}"
