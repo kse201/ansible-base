@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: "kse201"
+  description: "install kse201's dotfiles"
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: GenericUNIX
+      versions:
+        - all
+        - any
+    - name: EL
+      versions:
+        - 6
+  categories:
+    - development
+    - system
+  dependencies: []
