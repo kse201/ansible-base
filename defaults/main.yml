@@ -2,8 +2,8 @@
 pkgs:
   - git
   - screen
-  - zsh
-dotfiles: 
+  - fish
+dotfiles:
   repo: http://github.com/kse201/dotfiles.git
   version: master
   files:
