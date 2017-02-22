@@ -18,15 +18,3 @@
     state: link
   with_items:
     - "{{ dotfiles.files }}"
-
-- name: make vim/bundle dir
-  file: 
-    path: "{{ ansible_env.HOME }}/.vim/bundle"
-    state: directory
-
-- name: install shougoware
-  git:
-    repo: "{{ item }}"
-    dest: "{{ ansible_env.HOME }}/.vim/bundle"
-  with_items:
-    - "{{ repo_shougowares}}"
