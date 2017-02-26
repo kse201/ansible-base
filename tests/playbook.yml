@@ -2,6 +2,6 @@
 - hosts: all
   vars: []
   roles:
-    - role: my_dev_env
+    - role: ansible-dotfiles
   tasks: []
   sudo: no
