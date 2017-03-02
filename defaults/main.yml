@@ -2,7 +2,6 @@
 pkgs:
   - git
   - screen
-  - fish
 dotfiles:
   repo: http://github.com/kse201/dotfiles.git
   version: master
