@@ -4,4 +4,4 @@
   roles:
     - role: ansible-dotfiles
   tasks: []
-  sudo: no
+  become: no
