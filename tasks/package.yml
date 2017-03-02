@@ -4,4 +4,4 @@
     name: "{{ item }}"
   sudo: yes
   with_items:
-    - "{{ pkgs }}"
+    - "{{ kse201_dotfiles.packages }}"

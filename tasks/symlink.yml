@@ -5,4 +5,4 @@
     dest: "{{ ansible_env.HOME }}/{{ item }}"
     state: link
   with_items:
-    - "{{ dotfiles.files }}"
+    - "{{ kse201_dotfiles.files }}"

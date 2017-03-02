@@ -1,8 +1,9 @@
 ---
-pkgs:
-  - git
-  - screen
-dotfiles:
+kse201_dotfiles:
+  packages:
+    - vim
+    - git
+    - tmux
   repo: http://github.com/kse201/dotfiles.git
   version: master
   files:
@@ -10,4 +11,5 @@ dotfiles:
     - .gitmessage.txt
     - .tmux.conf
     - .vimrc
+    - .gvimrc
     - .vimrc.plugin
