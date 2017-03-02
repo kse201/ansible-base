@@ -1,7 +1,12 @@
 ---
+- name: enable EPEL repo
+  yum:
+    name: epel-release
+  become: yes
+
 - name: Install packages
   yum:
     name: "{{ item }}"
-  sudo: yes
+  become: yes
   with_items:
     - "{{ kse201_dotfiles.packages }}"

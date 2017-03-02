@@ -4,12 +4,16 @@ kse201_dotfiles:
     - vim
     - git
     - tmux
+    - fish
   repo: http://github.com/kse201/dotfiles.git
   version: master
-  files:
+  dotfiles:
     - .gitconfig
     - .gitmessage.txt
     - .tmux.conf
     - .vimrc
     - .gvimrc
     - .vimrc.plugin
+  xdg_config_files:
+    - fish
+    - terminator

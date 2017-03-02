@@ -5,4 +5,17 @@
     dest: "{{ ansible_env.HOME }}/{{ item }}"
     state: link
   with_items:
-    - "{{ kse201_dotfiles.files }}"
+    - "{{ kse201_dotfiles.dotfiles }}"
+
+- name: make xdg config dir
+  file:
+    path: "{{ ansible_env.HOME }}/.config"
+    state: directory
+
+- name: link xdg config files
+  file:
+    src: "{{ ansible_env.HOME }}/.dotfiles/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
+    state: link
+  with_items:
+    - "{{ kse201_dotfiles.xdg_config_files }}"
