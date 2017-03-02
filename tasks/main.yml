@@ -1,20 +1,4 @@
 ---
-- name: Install packages
-  yum:
-    name: "{{ item }}"
-  sudo: yes
-  with_items:
-    - "{{ pkgs }}"
-
-- name: install dotfiles
-  git:
-    repo: "{{ dotfiles.repo }}"
-    dest: "{{ ansible_env.HOME }}/.dotfiles"
-
-- name: link dotfiles
-  file:
-    src: "{{ ansible_env.HOME }}/.dotfiles/{{ item }}"
-    dest: "{{ ansible_env.HOME }}/{{ item }}"
-    state: link
-  with_items:
-    - "{{ dotfiles.files }}"
+- include: package.yml
+- include: clone.yml
+- include: symlink.yml

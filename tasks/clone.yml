@@ -1,0 +1,5 @@
+---
+- name: install dotfiles
+  git:
+    repo: "{{ dotfiles.repo }}"
+    dest: "{{ ansible_env.HOME }}/.dotfiles"

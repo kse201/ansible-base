@@ -1,0 +1,8 @@
+---
+- name: link dotfiles
+  file:
+    src: "{{ ansible_env.HOME }}/.dotfiles/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/{{ item }}"
+    state: link
+  with_items:
+    - "{{ dotfiles.files }}"
