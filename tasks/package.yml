@@ -1,12 +1,28 @@
 ---
-- name: enable EPEL repo
-  yum:
-    name: epel-release
-  become: yes
+- block:
+  - name: enable EPEL repo
+    yum:
+      name: epel-release
+    become: yes
 
-- name: Install packages
-  yum:
-    name: "{{ item }}"
-  become: yes
-  with_items:
-    - "{{ kse201_dotfiles.packages }}"
+  - name: Install packages
+    yum:
+      name: "{{ item }}"
+    become: yes
+    with_items:
+      - "{{ kse201_dotfiles.packages }}"
+  when: ansible_os_family == 'RedHat'
+
+- block:
+  - name: enable fish repo
+    apt_repository:
+      repo: 'ppa:fish-shell/release-2'
+    become: yes
+
+  - name: Install packages
+    apt:
+      name: "{{ item }}"
+    become: yes
+    with_items:
+      - "{{ kse201_dotfiles.packages }}"
+  when: ansible_os_family == "Debian"
