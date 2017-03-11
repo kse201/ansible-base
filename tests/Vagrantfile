@@ -1,14 +1,22 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby shiftwidth=2:
+require 'yaml'
+box_file = 'box.yml'
 
-VAGRANTFILE_API_VERSION = '2'
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = 'opscode_centos-7.2'
-  config.vm.hostname = 'centos72'
-  config.vm.box_url = 'http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-7.2_chef-provisionerless.box'
-  config.vm.box_check_update = false
+VAGRANTFILE_API_VERSION = '2'.freeze
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |vagrant_cfg|
+  boxes = YAML.load_file(box_file)
+  boxes.each do |box, params|
+    vagrant_cfg.vm.define box do |box_cfg|
+      box_cfg.vm.box = params[:box]
+      box_cfg.vm.hostname = box
+      box_cfg.vm.box_check_update = true
 
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "playbook.yml"
+      box_cfg.vm.provision :shell, inline: params[:userdata] if params[:userdata]
+
+      box_cfg.vm.provision 'ansible' do |ansible|
+        ansible.playbook = 'site.yml'
+      end
+    end
   end
 end

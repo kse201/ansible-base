@@ -1,0 +1,9 @@
+---
+:centos:
+  :box: centos/7
+:ubuntu:
+  :box: ubuntu/trusty64
+  :userdata: |
+    #!/bin/sh
+
+    sudo apt-get install -y ansible
