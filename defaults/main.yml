@@ -6,6 +6,7 @@ kse201_dotfiles:
     - tmux
     - fish
   repo: http://github.com/kse201/dotfiles.git
+  repo_depth: 10
   version: master
   dotfiles:
     - .gitconfig
