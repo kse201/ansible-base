@@ -3,4 +3,4 @@
   git:
     repo: "{{ kse201_dotfiles.repo }}"
     dest: "{{ ansible_env.HOME }}/.dotfiles"
-    depth: "{ kse201_dotfiles.repo_depth }"
+    depth: "{{ kse201_dotfiles.repo_depth }}"
