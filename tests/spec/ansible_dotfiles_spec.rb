@@ -7,7 +7,13 @@ pkgs = case os[:family]
          %w(vim git fish tmux)
        end
 
-files = %w(.vimrc .gitconfig .config/fish .tmux.conf)
+files = %w(
+          .vimrc
+          .gitconfig
+          .config/fish
+          .tmux.conf
+          .gemrc
+)
 
 describe os[:family] do
   pkgs.each do |pkg|
@@ -27,5 +33,6 @@ files.each do |cfg|
 
   describe file("/home/#{user}/#{cfg}") do
     it { should be_exist }
+    it { should be_symlink}
   end
 end

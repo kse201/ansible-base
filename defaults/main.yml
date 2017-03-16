@@ -15,6 +15,7 @@ kse201_dotfiles:
     - .vimrc
     - .gvimrc
     - .vimrc.plugin
+    - .gemrc
   xdg_config_files:
     - fish
     - terminator
