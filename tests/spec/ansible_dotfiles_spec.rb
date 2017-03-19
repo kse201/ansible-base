@@ -9,8 +9,10 @@ pkgs = case os[:family]
 
 files = %w(
           .vimrc
+          .vimrc.plugin
           .gitconfig
           .config/fish
+          .config/nvim
           .tmux.conf
           .gemrc
 )

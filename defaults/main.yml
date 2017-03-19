@@ -12,10 +12,8 @@ kse201_dotfiles:
     - .gitconfig
     - .gitmessage.txt
     - .tmux.conf
-    - .vimrc
-    - .gvimrc
-    - .vimrc.plugin
     - .gemrc
   xdg_config_files:
     - fish
+    - nvim
     - terminator
