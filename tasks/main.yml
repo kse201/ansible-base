@@ -1,2 +1,4 @@
 ---
-# tasks file for kse201.base
+- include: ruby.yml
+  become: true
+- include: python.yml

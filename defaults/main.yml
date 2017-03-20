@@ -1,2 +1,13 @@
 ---
-# defaults file for kse201.base
+kse201_base:
+  ruby:
+    version: "2.3.3"
+    additional_rubygems:
+      - rubocop
+      - tmuxinator
+  python:
+    version: "3.5.0"
+    additional_pips:
+      - vim-vint
+      - ansible-lint
+      - yamllint

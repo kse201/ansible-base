@@ -15,7 +15,8 @@ galaxy_info:
     - system
 
 dependencies:
-  - kse201.dotfiles
-  - zzet.rbenv
-  - shomatan.neovim
-  - azmodude.pyenv
+  - role: kse201.dotfiles
+  - role: shomatan.neovim
+    become: true
+  - role: zzet.rbenv
+  - role: azmodude.pyenv
