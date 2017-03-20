@@ -1,0 +1,21 @@
+galaxy_info:
+  author: "kse201"
+  description: "provisioning basic tools and configration for development "
+  license: MIT
+
+  min_ansible_version: 2.2
+
+  platforms:
+    - name: EL
+      versions:
+        - 7
+
+  categorizes:
+    - development
+    - system
+
+dependencies:
+  - kse201.dotfiles
+  - zzet.rbenv
+  - shomatan.neovim
+  - azmodude.pyenv
