@@ -75,3 +75,6 @@ kse201_base:
       - ansible-lint
       - yamllint
       - awscli
+  nodejs:
+    additional_npm:
+      - jsonlint

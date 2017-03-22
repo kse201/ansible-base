@@ -25,3 +25,6 @@
   tags:
     - desktop
   when: ansible_distribution == "Archlinux"
+- include: nodejs.yml
+  tags:
+    - nodejs
