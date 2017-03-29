@@ -1,13 +1,23 @@
 ---
 kse201_base:
+  packages:
+    pacman:
+      - fish
+      - git
+      - tmux
+      - neovim
+      - proxychains-ng
+      - python
+      - python-pip
+      - ruby
   ruby:
-    version: "2.3.3"
-    additional_rubygems:
+    rubygems:
+      - bundler
       - rubocop
-      - tmuxinator
+      - serverspec
   python:
-    version: "3.5.0"
-    additional_pips:
+    pips:
+      - neovim
       - vim-vint
       - ansible-lint
       - yamllint

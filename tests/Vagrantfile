@@ -1,24 +1,7 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby shiftwidth=2:
-require 'yaml'
-box_file = 'box.yml'
-
-VAGRANTFILE_API_VERSION = '2'.freeze
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |vagrant_cfg|
-  boxes = YAML.load_file(box_file)
-  boxes.each do |box, params|
-    vagrant_cfg.vm.define box do |box_cfg|
-      box_cfg.vm.box = params[:box]
-      box_cfg.vm.hostname = box
-      box_cfg.vm.box_check_update = true
-
-      box_cfg.vm.provision :shell, inline: params[:userdata] \
-        if params[:userdata]
-
-      box_cfg.vm.provision :ansible do |ansible|
-        ansible.verbose = 'v'
-        ansible.playbook = 'playbook.yml'
-      end
-    end
+Vagrant.configure(2) do |config|
+  config.vm.box = 'terrywang/archlinux'
+  config.vm.provision :ansible do |ansible|
+    ansible.verbose = 'v'
+    ansible.playbook = 'playbook.yml'
   end
 end

@@ -1,0 +1,7 @@
+---
+- name: install packages
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - "{{ kse201_base.packages.pacman }}"
+  become: true

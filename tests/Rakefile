@@ -2,50 +2,15 @@ require 'rake'
 require 'rspec/core/rake_task'
 require 'yaml'
 
-box_file = 'box.yml'
-targets = []
-begin
-  boxes = YAML.load_file(box_file)
-  boxes.each_key do |box|
-    box = "_#{box}" if box == :default
-    targets << box
-  end
-rescue Psych::SyntaxError
-  puts "[ERROR] SyntaxError in #{box_file}!"
-  exit
-rescue Errno::ENOENT
-  puts "[WARNING] #{box_file} was not found!"
-end
-
 task default: :spec
 
-task clean: 'clean:all'
-task spec: 'spec:all'
-
-desc 'clean all box'
-namespace :clean do
-  task all: targets
-  task default: :all
-
-  targets.each do |target|
-    desc "clean #{target}"
-    task target do
-      `vagrant destroy -f #{target}`
-    end
-  end
+desc 'clean vagrant'
+task :clean do
+  `vagrant destroy -f`
 end
 
-namespace :spec do
-  task all: targets
-  task default: :all
-
-  targets << :localhost
-  targets.each do |target|
-    original_target = target == '_default' ? target[1..-1] : target
-    desc "Run serverspec tests to #{original_target}"
-    RSpec::Core::RakeTask.new(target) do |t|
-      ENV['TARGET_HOST'] = original_target.to_s
-      t.pattern = 'spec/*_spec.rb'
-    end
-  end
+desc 'Run serverspec tests'
+RSpec::Core::RakeTask.new(:spec) do |t|
+  ENV['TARGET_HOST'] = 'default'
+  t.pattern = 'spec/*_spec.rb'
 end

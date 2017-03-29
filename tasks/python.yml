@@ -1,16 +1,6 @@
 ---
-- name: install python {{ python_version }}
-  shell: |
-    {{ ansible_env.HOME }}/.pyenv/bin/pyenv \
-        install {{ kse201_base.python.version }}
-    {{ ansible_env.HOME }}/.pyenv/bin/pyenv \
-        global {{ kse201_base.python.version }}
-    {{ ansible_env.HOME }}/.pyenv/shims/pip install --upgrade pip
-
 - name: install pip
   pip:
     name: "{{ item }}"
-    executable: "{{ ansible_env.HOME }}/.pyenv/shims/pip"
   with_items:
-    - neovim
-    - "{{ kse201_base.python.additional_pips }}"
+    - "{{ kse201_base.python.pips }}"

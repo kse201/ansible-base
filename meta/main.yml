@@ -1,22 +1,13 @@
+---
 galaxy_info:
   author: "kse201"
-  description: "provisioning basic tools and configration for development "
+  description: "provisioning basic tools and configration for development"
   license: MIT
 
   min_ansible_version: 2.2
 
   platforms:
-    - name: EL
-      versions:
-        - 7
+    - name: Archlinux
 
   categorizes:
     - development
-    - system
-
-dependencies:
-  - role: kse201.dotfiles
-  - role: shomatan.neovim
-    become: true
-  - role: zzet.rbenv
-  - role: azmodude.pyenv

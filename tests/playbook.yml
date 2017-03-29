@@ -4,4 +4,4 @@
   roles:
     - role: ansible-base
   tasks: []
-  become: false
+  become: true

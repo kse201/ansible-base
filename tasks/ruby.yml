@@ -2,6 +2,5 @@
 - name: install additional rubygems
   gem:
     name: "{{ item }}"
-    executable: "/usr/local/rbenv/shims/gem"
   with_items:
-    - "{{ kse201_base.ruby.additional_rubygems }}"
+    - "{{ kse201_base.ruby.rubygems }}"
