@@ -1,7 +1,11 @@
 ---
-- include: clone.yml
-  tags:
-    - deploy
-- include: symlink.yml
+- block:
+  - include: clone.yml
+  - include: symlink.yml
+  vars:
+    repo: "{{ kse201_dotfiles.repo }}"
+    clone_path: "{{ ansible_env.HOME }}/.ghq/{{ repo.host }}/{{ repo.name }}"
+    xdg_config_files: "{{ kse201_dotfiles.xdg_config_files }}"
+    home_files: "{{ kse201_dotfiles.home_files }}"
   tags:
     - deploy

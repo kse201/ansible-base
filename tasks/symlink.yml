@@ -1,15 +1,15 @@
 ---
 - name: link dotfiles
   file:
-    src: "{{ ansible_env.HOME }}/.dotfiles/{{ item }}"
+    src: "{{ clone_path }}/{{ item }}"
     dest: "{{ ansible_env.HOME }}/{{ item }}"
     state: link
   with_items:
-    - "{{ kse201_dotfiles.home_files }}"
+    - "{{ home_files }}"
 
 - name: link vim config
   file:
-    src: "{{ ansible_env.HOME }}/.dotfiles/nvim/{{ item.neovim }}"
+    src: "{{ clone_path }}/nvim/{{ item.neovim }}"
     dest: "{{ ansible_env.HOME }}/{{ item.vim }}"
     state: link
   with_items:
@@ -24,8 +24,8 @@
 
 - name: link xdg config files
   file:
-    src: "{{ ansible_env.HOME }}/.dotfiles/{{ item }}"
+    src: "{{ clone_path }}/{{ item }}"
     dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
     state: link
   with_items:
-    - "{{ kse201_dotfiles.xdg_config_files }}"
+    - "{{ xdg_config_files }}"

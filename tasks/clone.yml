@@ -1,13 +1,13 @@
 ---
 - name: check dotfiles
   stat:
-    path: "{{ ansible_env.HOME }}/.dotfiles"
+    path: "{{ clone_path }}"
   register: dotfiles
 
 - name: install dotfiles
   git:
-    repo: "{{ kse201_dotfiles.repo.url }}"
-    dest: "{{ ansible_env.HOME }}/.dotfiles"
-    depth: "{{ kse201_dotfiles.repo.depth }}"
-    version: "{{ kse201_dotfiles.repo.version }}"
+    repo: "https://{{ rep.host }}/{{ repo.name }}"
+    dest: "{{ clone_path }}"
+    depth: "{{ repo.depth }}"
+    version: "{{ repo.version }}"
   when: not dotfiles.stat.exists

@@ -1,7 +1,8 @@
 ---
 kse201_dotfiles:
   repo:
-    url: http://github.com/kse201/dotfiles.git
+    host: github.com
+    name: kse201/dotfiles
     depth: 10
     version: master
   home_files:
