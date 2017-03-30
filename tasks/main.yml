@@ -1,7 +1,17 @@
 ---
 - include: package.yml
   become: true
+  tags:
+    - package
 - include: ruby.yml
   become: true
+  tags:
+    - ruby
 - include: python.yml
   become: true
+  tags:
+    - python
+- include: docker.yml
+  become: true
+  tags:
+    - docker

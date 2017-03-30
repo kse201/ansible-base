@@ -5,3 +5,5 @@
   with_items:
     - "{{ kse201_base.packages.pacman }}"
   become: true
+  tags:
+    - pacman
