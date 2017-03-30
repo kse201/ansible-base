@@ -10,6 +10,19 @@ kse201_base:
       - python
       - python-pip
       - ruby
+      - colordiff
+      - glances
+      - the_silver_searcher
+      - ranger
+      - unzip
+      - xterm
+      - terminator
+      - docker
+    aur:
+      - ghq
+      - peco
+      - lostfiles
+      - ttf-ricty
   ruby:
     rubygems:
       - bundler
