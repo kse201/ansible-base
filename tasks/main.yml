@@ -1,3 +1,7 @@
 ---
 - include: clone.yml
+  tags:
+    - deploy
 - include: symlink.yml
+  tags:
+    - deploy
