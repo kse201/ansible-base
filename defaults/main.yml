@@ -13,3 +13,4 @@ kse201_dotfiles:
     - fish
     - nvim
     - terminator
+    - ranger
