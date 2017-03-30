@@ -11,7 +11,7 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - trusty
+    - name: archlinux
   categories:
     - development
-    - system
   dependencies: []

@@ -1,14 +1,10 @@
 ---
 kse201_dotfiles:
-  packages:
-    - vim
-    - git
-    - tmux
-    - fish
-  repo: http://github.com/kse201/dotfiles.git
-  repo_depth: 10
-  version: master
-  dotfiles:
+  repo:
+    url: http://github.com/kse201/dotfiles.git
+    depth: 10
+    version: master
+  home_files:
     - .gitconfig
     - .gitmessage.txt
     - .tmux.conf

@@ -5,7 +5,7 @@
     dest: "{{ ansible_env.HOME }}/{{ item }}"
     state: link
   with_items:
-    - "{{ kse201_dotfiles.dotfiles }}"
+    - "{{ kse201_dotfiles.home_files }}"
 
 - name: link vim config
   file:
@@ -13,12 +13,9 @@
     dest: "{{ ansible_env.HOME }}/{{ item.vim }}"
     state: link
   with_items:
-    - vim: .vimrc
-      neovim: init.vim
-    - vim: .gvimrc
-      neovim: gvim.vim
-    - vim: .vimrc.plugin
-      neovim: plugin.vim
+    - {vim: .vimrc, neovim: init.vim}
+    - {vim: .gvimrc, neovim: gvim.vim}
+    - {vim: .vimrc.plugin, neovim: plugin.vim}
 
 - name: make xdg config dir
   file:

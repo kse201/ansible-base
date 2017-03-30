@@ -1,6 +1,7 @@
 ---
 - name: install dotfiles
   git:
-    repo: "{{ kse201_dotfiles.repo }}"
+    repo: "{{ kse201_dotfiles.repo.url }}"
     dest: "{{ ansible_env.HOME }}/.dotfiles"
-    depth: "{{ kse201_dotfiles.repo_depth }}"
+    depth: "{{ kse201_dotfiles.repo.depth }}"
+    version: "{{ kse201_dotfiles.repo.version }}"
