@@ -4,6 +4,24 @@
     name: "{{ item }}"
   with_items:
     - "{{ kse201_base.packages.pacman }}"
-  become: true
+
+- name: ensure ruby is installed
+  pacman:
+    name: ruby
   tags:
-    - pacman
+    - ruby
+
+- name: ensure python is installed
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - python
+    - python-pip
+  tags:
+    - python
+
+- name: ensure docker is installed
+  pacman:
+    name: docker
+  tags:
+    - docker

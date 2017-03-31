@@ -7,9 +7,6 @@ kse201_base:
       - tmux
       - neovim
       - proxychains-ng
-      - python
-      - python-pip
-      - ruby
       - colordiff
       - glances
       - the_silver_searcher
@@ -17,7 +14,6 @@ kse201_base:
       - unzip
       - xterm
       - terminator
-      - docker
     aur:
       - ghq
       - peco
