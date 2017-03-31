@@ -6,7 +6,7 @@
 
 - name: install dotfiles
   git:
-    repo: "https://{{ rep.host }}/{{ repo.name }}"
+    repo: "https://{{ repo.host }}/{{ repo.name }}"
     dest: "{{ clone_path }}"
     depth: "{{ repo.depth }}"
     version: "{{ repo.version }}"
