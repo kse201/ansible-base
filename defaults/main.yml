@@ -30,3 +30,4 @@ kse201_base:
       - vim-vint
       - ansible-lint
       - yamllint
+      - awscli
