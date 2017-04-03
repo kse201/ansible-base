@@ -3,7 +3,7 @@
   pacman:
     name: "{{ item }}"
   with_items:
-    - "{{ kse201_base.packages.pacman }}"
+    - "{{ kse201_base.packages.native }}"
 
 - name: ensure ruby is installed
   pacman:

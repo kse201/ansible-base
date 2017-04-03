@@ -1,7 +1,7 @@
 ---
 kse201_base:
   packages:
-    pacman:
+    native:
       - fish
       - git
       - tmux
@@ -14,7 +14,7 @@ kse201_base:
       - unzip
       - xterm
       - terminator
-    aur:
+    foreign:
       - ghq
       - peco
       - lostfiles
