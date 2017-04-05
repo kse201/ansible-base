@@ -11,3 +11,6 @@
 - include: docker.yml
   tags:
     - docker
+- include: desktop.yml
+  tags:
+    - desktop

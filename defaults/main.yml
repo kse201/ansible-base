@@ -1,6 +1,12 @@
 ---
 kse201_base:
   packages:
+    desktop:
+      - ibus
+      - xorg-server
+      - xfce4
+      - lightdm
+      - lightdm-gtk-greeter
     native:
       - fish
       - git
@@ -19,6 +25,7 @@ kse201_base:
       - peco
       - lostfiles
       - ttf-ricty
+      - mozc
   ruby:
     rubygems:
       - bundler
