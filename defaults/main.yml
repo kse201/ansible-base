@@ -14,12 +14,12 @@ kse201_base:
       - neovim
       - proxychains-ng
       - colordiff
+      - tree
       - glances
       - the_silver_searcher
       - ranger
       - unzip
-      - xterm
-      - terminator
+      - pkgfile
     foreign:
       - ghq
       - peco
