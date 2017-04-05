@@ -2,5 +2,6 @@
 - name: install pip
   pip:
     name: "{{ item }}"
+    extra_args: --user
   with_items:
     - "{{ kse201_base.python.pips }}"
