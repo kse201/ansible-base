@@ -31,7 +31,6 @@ kse201_base:
         - ansible
       desktop:
         - ibus
-        - xorg-server
         - xfce4
         - lightdm
         - lightdm-gtk-greeter
@@ -41,6 +40,7 @@ kse201_base:
         - vagrant
         - lxc
         - arch-install-scripts
+        - cronie
     foreign:
       - ghq
       - peco
@@ -48,11 +48,14 @@ kse201_base:
       - ttf-ricty
       - mozc
       - xfce-theme-blackbird
+      - xfce-theme-axiomd
+      - pipdeptree
   ruby:
     rubygems:
       - bundler
       - rubocop
       - serverspec
+      - tmuxinator
   python:
     pips:
       - neovim
