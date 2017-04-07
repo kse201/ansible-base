@@ -1,31 +1,38 @@
 ---
 kse201_base:
   packages:
-    desktop:
-      - ibus
-      - xorg-server
-      - xfce4
-      - lightdm
-      - lightdm-gtk-greeter
     native:
-      - fish
-      - git
-      - tmux
-      - neovim
-      - proxychains-ng
-      - colordiff
-      - tree
-      - glances
-      - the_silver_searcher
-      - ranger
-      - unzip
-      - pkgfile
+      basic:
+        - fish
+        - git
+        - tmux
+        - neovim
+        - unzip
+        - terminator
+        - the_silver_searcher
+        - colordiff
+        - tree
+        - glances
+        - ansible
+      desktop:
+        - ibus
+        - xorg-server
+        - xfce4
+        - lightdm
+        - lightdm-gtk-greeter
+      additional:
+        - ranger
+        - pkgfile
+        - vagrant
+        - lxc
+        - arch-install-scripts
     foreign:
       - ghq
       - peco
       - lostfiles
       - ttf-ricty
       - mozc
+      - xfce-theme-blackbird
   ruby:
     rubygems:
       - bundler

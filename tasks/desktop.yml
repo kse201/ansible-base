@@ -4,4 +4,4 @@
     name: "{{ item }}"
   become: true
   with_items:
-    - "{{ kse201_base.packages.desktop }}"
+    - "{{ kse201_base.packages.native.desktop }}"
