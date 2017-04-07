@@ -1,5 +1,20 @@
 ---
 kse201_base:
+  repo:
+    host: github.com
+    name: kse201/dotfiles
+    depth: 10
+    version: master
+  home_files:
+    - .gitconfig
+    - .gitmessage.txt
+    - .tmux.conf
+    - .gemrc
+  xdg_config_files:
+    - fish
+    - nvim
+    - terminator
+    - ranger
   packages:
     native:
       basic:

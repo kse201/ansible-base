@@ -5,7 +5,7 @@ A basic role providing some common
 development tools and system configrations
 for kse201.
 
-Requirements
+Requirements/Dependencies
 ------------
 
 TBD
@@ -14,11 +14,7 @@ Role Variables
 --------------
 
 TBD
-
-Dependencies
-------------
-
-TBD
+see [default variables](https://github.com/kse201/ansible-dotfiles/defaults/main.yml)
 
 Example Playbook
 ----------------

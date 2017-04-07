@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: "kse201"
-  description: "provisioning basic tools and configration for development"
+  description: "provision for kse201 development environment"
   license: MIT
 
   min_ansible_version: 2.2

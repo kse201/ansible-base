@@ -1,0 +1,13 @@
+---
+- name: check dotfiles
+  stat:
+    path: "{{ clone_path }}"
+  register: dotfiles
+
+- name: install dotfiles
+  git:
+    repo: "https://{{ repo.host }}/{{ repo.name }}"
+    dest: "{{ clone_path }}"
+    depth: "{{ repo.depth }}"
+    version: "{{ repo.version }}"
+  when: not dotfiles.stat.exists

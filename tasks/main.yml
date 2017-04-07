@@ -1,4 +1,14 @@
 ---
+- block:
+  - include: clone.yml
+  - include: symlink.yml
+  vars:
+    repo: "{{ kse201_base.repo }}"
+    clone_path: "{{ ansible_env.HOME }}/.ghq/{{ repo.host }}/{{ repo.name }}"
+    xdg_config_files: "{{ kse201_base.xdg_config_files }}"
+    home_files: "{{ kse201_base.home_files }}"
+  tags:
+    - deploy
 - include: package.yml
   tags:
     - package
