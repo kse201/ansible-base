@@ -32,6 +32,7 @@ kse201_base:
       desktop:
         - ibus
         - xfce4
+        - xorg-server
         - lightdm
         - lightdm-gtk-greeter
       additional:
@@ -41,6 +42,7 @@ kse201_base:
         - lxc
         - arch-install-scripts
         - cronie
+        - sshfs
     foreign:
       - ghq
       - peco
