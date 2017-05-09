@@ -1,7 +1,0 @@
----
-- name: ensure Desktop packages
-  pacman:
-    name: "{{ item }}"
-  become: true
-  with_items:
-    - "{{ kse201_base.packages.native.desktop }}"
