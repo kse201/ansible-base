@@ -11,6 +11,12 @@
       name: proxychains-ng
     when: not "{{ ansible_env.HTTP_PROXY }}" == ''
 
+  - name: ensure proxychains-ng is installed if HTTP_PROXY is set
+    template:
+      src: proxychains.conf.j2
+      dest: '/etc/proxychains.conf'
+    when: not "{{ ansible_env.HTTP_PROXY }}" == ''
+
   - name: ensure additional packages is installed
     pacman:
       name: "{{ item }}"
