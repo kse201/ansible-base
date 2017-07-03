@@ -29,6 +29,12 @@ kse201_base:
         - tree
         - glances
         - ansible
+      desktop:
+        - ibus
+        - xfce4
+        - xorg-server
+        - lightdm
+        - lightdm-gtk-greeter
       additional:
         - ranger
         - pkgfile
@@ -41,6 +47,10 @@ kse201_base:
       - ghq
       - peco
       - lostfiles
+      - ttf-ricty
+      - mozc
+      - xfce-theme-blackbird
+      - xfce-theme-axiomd
       - pipdeptree
   ruby:
     rubygems:
