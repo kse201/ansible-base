@@ -17,6 +17,13 @@
       dest: '/etc/proxychains.conf'
     when: not "{{ ansible_env.HTTP_PROXY }}" == ''
 
+  - name: deploy freshclam.conf
+    template:
+      src: ../templates/freshclam.conf.j2
+      dest: /etc/clamav/freshclam.conf
+      mode: 0700
+      owner: root
+
   - name: ensure additional packages is installed
     pacman:
       name: "{{ item }}"

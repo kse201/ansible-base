@@ -1,0 +1,10 @@
+UpdateLogFile /var/log/clamav/freshclam.log
+DatabaseMirror database.clamav.net
+NotifyClamd /etc/clamav/clamd.conf
+
+{% if http_proxy is defined %}
+HTTPProxyServer {{ http_proxy.host }}
+HTTPProxyPort {{ http_proxy.port }}
+HTTPProxyUsername {{ http_proxy.user }}
+HTTPProxyPassword {{ http_proxy.pass }}
+{% endif %}
