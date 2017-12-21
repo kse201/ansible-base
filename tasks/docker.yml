@@ -12,4 +12,4 @@
     dropin_dir: /etc/systemd/system/docker.service.d
     http_proxy: "{{ ansible_env.HTTP_PROXY }}"
   become: yes
-  when: "{{ 'HTTP_PROXY' in ansible_env }}"
+  when: ansible_env['HTTP_PROXY'] is defined

@@ -24,3 +24,4 @@
 - include: desktop.yml
   tags:
     - desktop
+  when: ansible_distribution == "Archlinux"

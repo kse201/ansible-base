@@ -18,7 +18,6 @@ kse201_base:
   packages:
     native:
       basic:
-        - fish
         - git
         - tmux
         - neovim
@@ -66,13 +65,11 @@ kse201_base:
   ruby:
     rubygems:
       - bundler
+      - neovim
       - rubocop
-      - serverspec
-      - tmuxinator
-      - guard
-      - guard-shell
   python:
     pips:
+      - pip
       - neovim
       - vim-vint
       - ansible-lint

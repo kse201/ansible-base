@@ -1,7 +1,25 @@
 ---
+- name: ensure rbenv is installed (in Archlinux)
+  pacman:
+    name: rbenv
+  when: ansible_os_family == "Archlinux"
+  become: yes
+
+# TODO install via rbenv
+- name: ensure ruby is installed (in RedHat family)
+  yum:
+    name: "{{ item }}"
+  with_items:
+    - ruby
+    - ruby-devel
+  when: ansible_os_family == "RedHat"
+  become: yes
+
+# TODO: use bundler
 - name: install additional rubygems
   gem:
     name: "{{ item }}"
     user_install: yes
   with_items:
     - "{{ kse201_base.ruby.rubygems }}"
+  ignore_errors: yes # TODO: failed install with rubocop

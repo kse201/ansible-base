@@ -4,6 +4,18 @@
     path: "{{ clone_path }}"
   register: dotfiles
 
+- name: ensure git is installed (in Archlinux)
+  pacman:
+    name: git
+  when: ansible_os_family == "Archlinux"
+  become: yes
+
+- name: ensure git is installed (in RedHat family)
+  yum:
+    name: git
+  when: ansible_os_family == "RedHat"
+  become: yes
+
 - name: install dotfiles
   git:
     repo: "https://{{ repo.host }}/{{ repo.name }}"

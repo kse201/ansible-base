@@ -1,0 +1,14 @@
+---
+- name: ensure fish is installed (in Archlinux)
+  pacman:
+    name: fish
+  when: ansible_os_family == "Archlinux"
+  become: yes
+
+- block:
+  - name: ensure epel ic packages is installed (in RedHat family)
+    yum: name="epel-release"
+  - name: ensure fish is installed (in RedHat family)
+    yum: name="fish"
+  when: ansible_os_family == "RedHat"
+  become: yes

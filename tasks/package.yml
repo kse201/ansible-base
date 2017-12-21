@@ -1,21 +1,27 @@
 ---
 - block:
-  - name: ensure basic packages is installed
+  - include: fish.yml
+
+  - name: ensure basic packages is installed (in Archlinux)
     pacman:
       name: "{{ item }}"
     with_items:
       - "{{ kse201_base.packages.native.basic }}"
+    when: ansible_os_family == "Archlinux"
 
-  - name: ensure proxychains-ng is installed if HTTP_PROXY is set
-    pacman:
-      name: proxychains-ng
-    when: not "{{ ansible_env.HTTP_PROXY }}" == ''
+  - name: ensure basic packages is installed (in RedHat family)
+    yum:
+      name: "{{ item }}"
+    with_items:
+      - "{{ kse201_base.packages.native.basic }}"
+    when: ansible_os_family == "RedHat"
 
-  - name: ensure proxychains-ng is installed if HTTP_PROXY is set
-    template:
-      src: proxychains.conf.j2
-      dest: '/etc/proxychains.conf'
-    when: not "{{ ansible_env.HTTP_PROXY }}" == ''
+  - include: proxy.yml
+
+  - name: make freshclam config dir
+    file:
+      path: /etc/clamav
+      state: directory
 
   - name: deploy freshclam.conf
     template:
@@ -29,25 +35,12 @@
       name: "{{ item }}"
     with_items:
       - "{{ kse201_base.packages.native.additional }}"
-
-  - name: ensure ruby is installed
-    pacman:
-      name: ruby
-    tags:
-      - ruby
-
-  - name: ensure python is installed
-    pacman:
-      name: "{{ item }}"
-    with_items:
-      - python
-      - python-pip
-    tags:
-      - python
+    when: ansible_os_family == "Archlinux"
 
   - name: ensure docker is installed
     pacman:
       name: docker
     tags:
       - docker
+    when: ansible_os_family == "Archlinux"
   become: yes
