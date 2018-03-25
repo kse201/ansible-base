@@ -1,4 +1,5 @@
 ---
+head_less: true
 kse201_base:
   repo:
     host: github.com
@@ -13,8 +14,6 @@ kse201_base:
   xdg_config_files:
     - fish
     - nvim
-    - terminator
-    - ranger
   packages:
     native:
       basic:
@@ -22,7 +21,6 @@ kse201_base:
         - tmux
         - neovim
         - unzip
-        - terminator
         - the_silver_searcher
         - colordiff
         - tree
@@ -31,6 +29,11 @@ kse201_base:
         - cifs-utils
         - clamav
         - postfix
+        - bind-tools
+        - cmake
+        - doxygen
+        - gdb
+        - ctags
       desktop:
         - ibus
         - xfce4
@@ -49,24 +52,19 @@ kse201_base:
         - nmap
         - pass
         - pkgfile
-        - ranger
         - vagrant
     foreign:
       - dateutils
       - ghq
       - lostfiles
-      - mozc
-      - open-usp-tukubai
       - peco
       - pipdeptree
-      - ttf-ricty
-      - xfce-theme-axiomd
-      - xfce-theme-blackbird
   ruby:
     rubygems:
       - bundler
       - neovim
       - rubocop
+      - cureutils
   python:
     pips:
       - pip
