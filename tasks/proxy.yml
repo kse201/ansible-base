@@ -10,4 +10,9 @@
       src: proxychains.conf.j2
       dest: '/etc/proxychains.conf'
     when: not "{{ ansible_env.HTTP_PROXY }}" == ''
+    vars:
+      http_proxy:
+        host: "{{ ansible_env.HTTP_PROXY | urlsplit('hostname')}}"
+        pass: "{{ ansible_env.HTTP_PROXY | urlsplit('password')}}"
+        user: "{{ ansible_env.HTTP_PROXY | urlsplit('username')}}"
   when: ansible_os_family == "Archlinux"

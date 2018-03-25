@@ -17,6 +17,7 @@
     when: ansible_os_family == "RedHat"
 
   - include: proxy.yml
+    when: ansible_env['HTTP_PROXY'] is defined
 
   - name: make freshclam config dir
     file:
@@ -29,6 +30,13 @@
       dest: /etc/clamav/freshclam.conf
       mode: 0700
       owner: root
+    vars:
+      http_proxy:
+        host: "{{ ansible_env.HTTP_PROXY | urlsplit('hostname')}}"
+        port: "{{ ansible_env.HTTP_PROXY | urlsplit('port')}}"
+        pass: "{{ ansible_env.HTTP_PROXY | urlsplit('password')}}"
+        user: "{{ ansible_env.HTTP_PROXY | urlsplit('username')}}"
+    when: ansible_env['HTTP_PROXY'] is defined
 
   - name: ensure additional packages is installed
     pacman:

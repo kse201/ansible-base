@@ -46,7 +46,6 @@ kse201_base:
         - cowsay
         - figlet
         - hydra
-        - lolcat
         - lxc
         - moreutils
         - nmap
