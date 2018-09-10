@@ -58,6 +58,7 @@ kse201_base:
       - lostfiles
       - peco
       - pipdeptree
+      - man-pages-ja
   ruby:
     rubygems:
       - bundler
