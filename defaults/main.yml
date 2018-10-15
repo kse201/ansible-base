@@ -34,6 +34,7 @@ kse201_base:
         - doxygen
         - gdb
         - ctags
+        - bat
       desktop:
         - ibus
         - xfce4
