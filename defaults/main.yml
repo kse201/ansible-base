@@ -35,6 +35,7 @@ kse201_base:
         - gdb
         - ctags
         - bat
+        - gist
       desktop:
         - ibus
         - xfce4
