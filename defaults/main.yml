@@ -67,6 +67,7 @@ kse201_base:
       - neovim
       - rubocop
       - cureutils
+      - solargraph
   python:
     pips:
       - pip
@@ -75,3 +76,4 @@ kse201_base:
       - ansible-lint
       - yamllint
       - awscli
+      - python-language-server
