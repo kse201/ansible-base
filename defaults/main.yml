@@ -30,12 +30,13 @@ kse201_base:
         - clamav
         - postfix
         - bind-tools
-        - cmake
-        - doxygen
         - gdb
         - ctags
         - bat
-        - gist
+        - ranger
+        - highlight
+        - lynx
+        - elinks
       desktop:
         - ibus
         - xfce4
