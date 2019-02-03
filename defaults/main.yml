@@ -1,5 +1,5 @@
 ---
-head_less: true
+headless: true
 kse201_base:
   repo:
     host: github.com
@@ -9,7 +9,7 @@ kse201_base:
   home_files:
     - .gitconfig
     - .gitmessage.txt
-    - .tmux.conf
+    - .byobu
     - .gemrc
   xdg_config_files:
     - fish
