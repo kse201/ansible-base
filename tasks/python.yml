@@ -1,9 +1,12 @@
 ---
 - name: ensure pyenv is installed
   pacman:
-    name: pyenv
+    name: "{{ item }}"
   tags:
     - python
+  with_items:
+    - python
+    - python2
   when: ansible_os_family == "Archlinux"
   become: yes
 
