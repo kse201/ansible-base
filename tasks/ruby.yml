@@ -1,7 +1,7 @@
 ---
-- name: ensure rbenv is installed (in Archlinux)
+- name: ensure ruby is installed (in Archlinux)
   pacman:
-    name: rbenv
+    name: ruby
   when: ansible_os_family == "Archlinux"
   become: yes
 
