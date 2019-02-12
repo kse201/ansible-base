@@ -8,10 +8,7 @@
 # TODO install via rbenv
 - name: ensure ruby is installed (in RedHat family)
   yum:
-    name: "{{ item }}"
-  with_items:
-    - ruby
-    - ruby-devel
+    name: ['ruby', 'ruby-devel']
   when: ansible_os_family == "RedHat"
   become: yes
 

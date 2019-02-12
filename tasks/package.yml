@@ -4,16 +4,12 @@
 
   - name: ensure basic packages is installed (in Archlinux)
     pacman:
-      name: "{{ item }}"
-    with_items:
-      - "{{ kse201_base.packages.native.basic }}"
+      name: "{{ kse201_base.packages.native.basic }}"
     when: ansible_os_family == "Archlinux"
 
   - name: ensure basic packages is installed (in RedHat family)
     yum:
-      name: "{{ item }}"
-    with_items:
-      - "{{ kse201_base.packages.native.basic }}"
+      name: "{{ kse201_base.packages.native.basic }}"
     when: ansible_os_family == "RedHat"
 
   - include: proxy.yml
@@ -40,9 +36,7 @@
 
   - name: ensure additional packages is installed
     pacman:
-      name: "{{ item }}"
-    with_items:
-      - "{{ kse201_base.packages.native.additional }}"
+      name: "{{ kse201_base.packages.native.additional }}"
     when: ansible_os_family == "Archlinux"
 
   - name: ensure docker is installed

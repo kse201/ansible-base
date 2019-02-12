@@ -1,21 +1,15 @@
 ---
 - name: ensure pyenv is installed
   pacman:
-    name: "{{ item }}"
+    name: ['python', 'python2']
   tags:
     - python
-  with_items:
-    - python
-    - python2
   when: ansible_os_family == "Archlinux"
   become: yes
 
 - name: ensure python is installed
   yum:
-    name: "{{ item }}"
-  with_items:
-    - python
-    - python-pip
+    name: ['python', 'python-pip']
   tags:
     - python
   when: ansible_os_family == "RedHat"
@@ -23,8 +17,6 @@
 
 - name: install pip
   pip:
-    name: "{{ item }}"
+    name: "{{ kse201_base.python.pips }}"
     extra_args: --user
-  with_items:
-    - "{{ kse201_base.python.pips }}"
   ignore_errors: yes # TODO: failed install with vim-vint

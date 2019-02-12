@@ -3,13 +3,13 @@
   - name: ensure proxychains-ng is installed if HTTP_PROXY is set
     pacman:
       name: proxychains-ng
-    when: not "{{ ansible_env.HTTP_PROXY }}" == ''
+    when: ansible_env.HTTP_PROXY is not defined
 
   - name: ensure proxychains-ng is installed if HTTP_PROXY is set
     template:
       src: proxychains.conf.j2
       dest: '/etc/proxychains.conf'
-    when: not "{{ ansible_env.HTTP_PROXY }}" == ''
+    when: ansible_env.HTTP_PROXY is not defined
     vars:
       http_proxy:
         host: "{{ ansible_env.HTTP_PROXY | urlsplit('hostname')}}"
