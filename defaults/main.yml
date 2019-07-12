@@ -63,3 +63,7 @@ kse201_base:
       - pipdeptree
       - man-pages-ja
       - fd
+      - rbenv
+      - exa
+      - byobu
+      - direnv
