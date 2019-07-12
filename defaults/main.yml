@@ -55,7 +55,7 @@ kse201_base:
         - pass
         - pkgfile
         - vagrant
-    foreign:
+    aur:
       - dateutils
       - ghq
       - lostfiles

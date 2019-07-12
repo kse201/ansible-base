@@ -20,3 +20,8 @@
   when: not result.stat.exists
   vars:
     version: 8.998
+
+- name: ensure additional packages is installed
+  yay:
+    name: "{{ kse201_base.packages.aur }}"
+  when: ansible_os_family == "Archlinux"
