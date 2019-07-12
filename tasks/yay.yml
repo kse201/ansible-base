@@ -1,0 +1,22 @@
+---
+- name: Check yay installed
+  stat:
+    path: /usr/bin/yay
+  register: result
+
+- block:
+    - name: Download yay
+      get_url:
+        url: https://github.com/Jguer/yay/releases/download/v{{ version }}/yay_{{ version }}_x86_64.tar.gz
+        dest: /tmp/yay_{{ version }}_x86_64.tar.gz
+
+    - name: Unzip yay
+      unarchive:
+        src: /tmp/yay_{{ version }}_x86_64.tar.gz
+        dest: /tmp
+
+    - name: Install yay-bin
+      shell: /tmp/yay_{{ version }}_x86_64/yay -S --noconfirm yay-bin
+  when: not result.stat.exists
+  vars:
+    version: 8.998

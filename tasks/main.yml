@@ -12,6 +12,8 @@
 - include: package.yml
   tags:
     - package
+- include: yay.yml
+
 - include: desktop.yml
   tags:
     - desktop
