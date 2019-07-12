@@ -12,12 +12,6 @@
 - include: package.yml
   tags:
     - package
-- include: ruby.yml
-  tags:
-    - ruby
-- include: python.yml
-  tags:
-    - python
 - include: docker.yml
   tags:
     - docker
