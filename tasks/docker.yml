@@ -1,4 +1,19 @@
 ---
+- name: ensure docker is installed
+  pacman:
+    name: docker
+  tags:
+    - docker
+  when: ansible_os_family == "Archlinux"
+  become: yes
+
+- name: Add docker member
+  user:
+    name: "{{ ansible_ssh_user }}"
+    groups:
+      - docker
+  become: yes
+
 - block:
     - name: Make docker.service drop-in dir
       file:

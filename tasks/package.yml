@@ -39,10 +39,4 @@
       name: "{{ kse201_base.packages.native.additional }}"
     when: ansible_os_family == "Archlinux"
 
-  - name: ensure docker is installed
-    pacman:
-      name: docker
-    tags:
-      - docker
-    when: ansible_os_family == "Archlinux"
   become: yes
