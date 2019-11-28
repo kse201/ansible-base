@@ -37,6 +37,8 @@ kse201_base:
         - highlight
         - lynx
         - elinks
+        - thefuck
+        - diff-so-fancy
       desktop:
         - ibus
         - xfce4
