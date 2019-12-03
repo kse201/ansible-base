@@ -70,3 +70,4 @@ kse201_base:
       - exa
       - byobu
       - direnv
+      - starship-bin
