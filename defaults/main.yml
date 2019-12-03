@@ -39,6 +39,7 @@ kse201_base:
         - elinks
         - thefuck
         - diff-so-fancy
+        - pyenv
       desktop:
         - ibus
         - xfce4
