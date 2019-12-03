@@ -19,7 +19,7 @@
       shell: /tmp/yay_{{ version }}_x86_64/yay -S --noconfirm yay-bin
   when: not result.stat.exists
   vars:
-    version: 8.998
+    version: 9.4.2
 
 - name: ensure additional packages is installed
   yay:
