@@ -58,6 +58,7 @@ kse201_base:
         - pass
         - pkgfile
         - vagrant
+        - fzf
     aur:
       - dateutils
       - ghq
