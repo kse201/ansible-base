@@ -9,7 +9,7 @@ kse201_base:
   home_files:
     - .gitconfig
     - .gitmessage.txt
-    - .byobu
+    - .tmux.conf
     - .gemrc
   xdg_config_files:
     - fish
@@ -69,6 +69,5 @@ kse201_base:
       - fd
       - rbenv
       - exa
-      - byobu
       - direnv
       - starship-bin
