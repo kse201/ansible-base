@@ -7,10 +7,14 @@ kse201_base:
     depth: 10
     version: master
   home_files:
+    - .agignore
+    - .ctags
+    - .gemrc
     - .gitconfig
     - .gitmessage.txt
+    - .irbrc
+    - .pythonrc.py
     - .tmux.conf
-    - .gemrc
   xdg_config_files:
     - fish
     - nvim
